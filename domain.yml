@@ -1,0 +1,101 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - ask_state
+  - deny
+  - thank
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - telemetry_info
+  - ask_telemetry
+  - ask_battery
+  - ask_temperature
+  - ask_solarPanels
+  - ask_altitude
+  - ask_info
+  - ask_help
+  - ask_creator
+  - ask_professors
+  - ask_students
+  
+responses:
+  utter_welcome:
+  - text: "Hi! You are now talking with Estigia. How can I help you?"
+  
+  utter_please_rephrase:
+  - text: "I'm sorry, I didn't quite understand that"
+  - text: "Sorry, I didn't understand exactly what you meant"
+
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Hi! What do you need?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_state:
+  - text: "I am just a sattelite, I don't have feelings, sorry"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_thank:
+  - text: You're welcome!
+  - text: Glad I could help
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  
+#TELEMETRY DATA
+
+  utter_telemetry_info:
+  - text: "I can provide data about my battery, solar panels, altitude or temperature"
+
+  utter_telemetry:
+  - text: "What do you need?"
+  - text: "Which data do you want to know?"
+
+  utter_temperature:
+  - text: "I am at 15º C"
+
+  utter_solarPanels:
+  - text: "My solar panels are generating 2W"
+
+  utter_altitude:
+  - text: "I am at 521 km of altitude"
+
+#INFO
+
+  utter_info:
+  - text: "I am Estigia, the sattellite created by Pluton UPV"
+  
+
+  utter_help:
+  - text: "You can ask me information about myself or any tellemetry data"
+
+  utter_creator:
+  - text: "I was created by Pluton UPV"
+
+  utter_professors:
+  - text: "Some of them are Ana Vidal and Vicente Boria"
+
+  utter_students:
+  - text: "A multidisciplinary team of 25 students from UPV"
+
+actions:
+  - action_battery
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

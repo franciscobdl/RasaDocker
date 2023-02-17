@@ -1,0 +1,64 @@
+version: "3.1"
+
+rules:
+
+# - rule: don't understand
+#   steps:
+#   - intent: nlu_fallback
+#   - action: utter_please_rephrase
+
+# - rule: welcome
+#   steps:
+#   - intent: greet
+#   - action: utter_welcome
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say state
+  steps:
+  - intent: ask_state
+  - action: utter_state
+
+- rule: provide telemetry info
+  steps:
+  - intent: telemetry_info
+  - action: utter_telemetry_info
+
+- rule: provide info
+  steps:
+  - intent: ask_info
+  - action: utter_info
+
+- rule: Provide help
+  steps:
+  - intent: ask_help
+  - action: utter_help
+
+- rule: Provide creator
+  steps:
+  - intent: ask_creator
+  - action: utter_creator
+
+- rule: Provide professors
+  steps:
+  - intent: ask_professors
+  - action: utter_professors
+  
+- rule: Provide students
+  steps:
+  - intent: ask_students
+  - action: utter_students
+
+- rule: thanks
+  steps:
+  - intent: thank
+  - action: utter_thank
+

@@ -1,0 +1,76 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+  - intent: thank
+  - action: utter_thank
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+
+# - story: ask telemetry
+#   steps:
+#   - intent: ask_telemetry
+#   - action: utter_telemetry
+#   - or:
+#     - intent: ask_battery
+#     - intent: ask_solarPanels
+#     - intent: ask_temperature
+#     - intent: ask_altitude
+    # - action: utter_battery
+    # - action: utter_temperature
+    # - action: utter_solarPanels
+    # - action: utter_altitude
+
+- story: ask battery
+  steps:
+  - intent: ask_telemetry
+  - action: utter_telemetry
+  - intent: ask_battery
+  - action: action_battery
+
+- story: ask temperature
+  steps:
+  - intent: ask_telemetry
+  - action: utter_telemetry
+  - intent: ask_temperature
+  - action: utter_temperature
+
+- story: ask solarpanels
+  steps:
+  - intent: ask_telemetry
+  - action: utter_telemetry
+  - intent: ask_solarPanels
+  - action: utter_solarPanels
+
+- story: ask altitude
+  steps:
+  - intent: ask_telemetry
+  - action: utter_telemetry
+  - intent: ask_altitude
+  - action: utter_altitude
